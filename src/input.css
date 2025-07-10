@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+
+   --color-dark: #080808;
+   --color-grayy: #121212;
+   --color-midgray: #202020;
+   --color-lightgray: #404040;
+   --color-spotify-green: #1DB954;
+   --color-spotify-green-hover: #1ed760;
+  
+   --font-inter:"inter", sans-serif;
+
+}

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Spotify Clone</title>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../dist/output.css" />
+      <style>
+            
+            /* Scrollbar settings with only CSS */
+                 
+         ::-webkit-scrollbar {
+            width: 20px !important;
+            background-color: #121212; 
+         }
+
+         ::-webkit-scrollbar-thumb {
+            background-color: #535353; 
+            border-radius: 10px;
+            border: 5px solid #121212; 
+         }
+
+         ::-webkit-scrollbar-thumb:hover {
+            background-color: #777777; 
+         }
+
+        
+         
+
+      </style>
+   </head>
+
+   <body class="font-inter text-white bg-dark">
+
+      <header>
+         <!-- Navbar -->
+         <nav class="bg-dark h-16 px-6 w-full fixed z-50">
+            <div class="h-full w-full flex items-center">
+               <!-- logo -->
+               <div
+                  class="flex-initial lg:flex-1 xl:flex-2 2xl:flex-4 mr-1.5 flex items-center">
+                  <a href="#body">
+                     <img
+                        src="img/Spotify_Primary_Logo_RGB_White.png"
+                        alt=""
+                        class="block h-7 md:h-8 lg:h-9" />
+                  </a>
+               </div>
+
+               <!-- Home & Searchbar -->
+               <div
+                  class="flex-initial md:flex-2 xl:flex-3 flex gap-1 items-center justify-center">
+                  <!-- Home -->
+                  <i
+                     class="fa-solid fa-house p-3 bg-midgray rounded-full cursor-pointer transition-all duration-200 hover:brightness-[1.4] text-lg md:text-xl lg:text-2xl"></i>
+
+                  <!-- Searchbar-->
+                  <div class="relative w-auto md:w-full group">
+                     <form action="" class="w-full">
+                        <label for="searchbar"></label>
+                        <input
+                           type="text"
+                           id="searchbar"
+                           placeholder="What do you want to play?"
+                           class="hidden md:block bg-midgray border border-transparent outline-none p-3 rounded-3xl w-full pl-13 focus:ring-1 ring-white transition-all duration-300 group-hover:brightness-[1.4] group-hover:border-white/20" />
+
+                        <!-- Ctrl, K-->
+                        <span
+                           class="opacity-0 absolute top-1/2 max-[1123px]:hidden lg:left-[76%] min-[1900px]:!left-[63%] bg-lightgray text-sm transition-all duration-400 delay-100 -translate-y-1/2 -translate-x-1/2 group-hover:opacity-100 group-hover:brightness-[0.8]">
+                           <span class="p-1 border border-white rounded-sm"
+                              >Ctrl</span
+                           >
+                           <span class="p-1 border border-white rounded-sm"
+                              >K</span
+                           >
+                        </span>
+
+                        <!-- Magnifying Glass Icon-->
+                        <i
+                           class="fa-solid fa-magnifying-glass absolute top-1/2 left-7 transition-transform -translate-y-1/2 -translate-x-1/2 cursor-pointer group-hover:brightness-[1.4] text-lg p-3 bg-midgray rounded-full md:p-0 md:bg-transparent md:rounded-none md:text-xl lg:text-2xl"></i>
+                     </form>
+
+                     <!-- Browse Icon-->
+                     <div
+                        class="hidden lg:flex absolute -translate-y-1/2 -translate-x-1/2 top-1/2 right-0 group-hover:brightness-[1.4]">
+                        <!-- Divider -->
+                        <div
+                           class="h-7 bg-white opacity-60 mr-3"
+                           style="width: 0.5px"></div>
+
+                        <!-- Icon -->
+                        <i
+                           class="fa-solid fa-window-restore text-2xl cursor-pointer transition-all duration-200 hover:scale-110"></i>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Premium, log in etc. -->
+               <div
+                  class="flex-2 xl:flex-4 flex items-center justify-end divide-x">
+                  <div
+                     class="hidden xl:flex gap-3 pe-5 text-neutral-400 font-bold text-sm md:text-base">
+                     <a
+                        href="#"
+                        class="transition-all duration-200 hover:scale-105 hover:text-white"
+                        >Premium</a
+                     >
+                     <a
+                        href="#"
+                        class="transition-all duration-200 hover:scale-105 hover:text-white"
+                        >Support</a
+                     >
+                     <a
+                        href="#"
+                        class="transition-all duration-200 hover:scale-105 hover:text-white"
+                        >Download</a
+                     >
+                  </div>
+
+                  <div
+                     class="flex items-center gap-4 ps-5 text-neutral-400 font-semibold text-sm md:text-base">
+                     <a
+                        href="#"
+                        class="transition-all duration-200 hover:scale-105 hover:text-white max-[470px]:hidden">
+                        <i class="fa-regular fa-circle-down pr-2"></i>Install
+                        App</a
+                     >
+                     <a
+                        href="#"
+                        class="transition-all duration-200 hover:scale-105 hover:text-white max-[470px]:hidden"
+                        >Sign up</a
+                     >
+                     <a
+                        href="#"
+                        class="py-2.5 px-5 md:py-3 md:px-8 text-black font-bold bg-white rounded-4xl transition-all duration-200 hover:scale-105 hover:bg-neutral-300 max-[470px]:hidden"
+                        >Log in</a
+                     >
+
+                     <!-- Hamburger Icon -->
+                     <i
+                        class="fa-solid fa-bars block text-lg sm:text-xl xl:!hidden cursor-pointer hover:brightness-[1.4] transition-all duration-200 hover:scale-105">
+                     </i>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+      <aside
+         class="fixed top-[68px] left-2 h-[calc(100vh_-_150px)] 2xl:w-md lg:w-sm md:w-xs bg-grayy rounded-lg">
+         
+         <div class="h-full flex flex-col  px-2 py-5">
+            
+            <!--Upperside container-->
+            <div class="overflow-auto flex flex-col gap-7 pb-[50px] max-h-[calc(100%_-_160px)] z-0
+            ">
+               
+               <!-- Your library, + Icon-->
+               <div class="flex justify-between">
+                  <span class="pl-2 font-bold">Your library</span>
+                  <i class="fa-solid fa-plus cursor-pointer mr-2"></i>
+               </div>
+
+               <!-- Create your playlist -->
+               <div class="flex flex-col px-4 py-6 rounded-lg bg-midgray">
+                  <span class="mb-1 font-bold">Create your playlist</span>
+
+                  <span class="mb-3 text-sm">It's easy, We'll help you</span>
+
+                  <a
+                     href="#"
+                     class="w-fit inline-block py-1.5 px-4 text-black font-bold bg-white rounded-4xl transition-all duration-200 hover:scale-105 hover:bg-neutral-300">
+                     Create playlist
+                  </a>
+               </div>
+
+               <!-- Lets find some podcasts -->
+               <div class="flex flex-col px-4 py-6 rounded-lg bg-midgray">
+                  <span class="mb-1 font-bold">Let's fins some podcasts to follow</span>
+
+                  <span class="mb-3 text-sm">We'll keep you updated on new episodes</span>
+
+                  <a
+                     href="#"
+                     class="w-fit inline-block py-1.5 px-4 text-black font-bold bg-white rounded-4xl transition-all duration-200 hover:scale-105 hover:bg-neutral-300">
+                     Browse podcasts
+                  </a>
+               </div>
+
+            </div>   
+               
+            <!-- Legal links container-->
+            <div class="z-10 absolute bottom-5 pt-3  bg-grayy ">
+            
+               <!-- Legal Links -->
+               <div
+               class=" flex flex-wrap max-w-[370px] items-center pl-2 gap-3 text-xs text-neutral-400">
+                  
+                  <a href="#" class="mb-1">Legal</a>
+                  <a href="#" class="mb-1">Safety&Privacy Center</a>
+                  <a href="#" class="mb-1">Privacy Policy</a>
+                  <a href="#" class="mb-1">Cookie settings</a>
+                  <a href="#" class="mb-1">About ads</a>
+                  <a href="#" class="mb-1">Accesibility</a>
+
+                  <div class="w-full text-white">
+                     <a href="">Cookies</a>
+                  </div>
+                  
+               </div>
+            
+               <!-- Language Button -->
+               <a href="#" class="mt-7 w-fit border border-white text-sm inline-block py-1.5 px-4 text-white font-bold bg-dark rounded-4xl transition-all duration-200 hover:scale-105 ">
+                  <i class="fa-solid fa-globe pr-1"></i>
+               English</a>
+                  
+            </div>
+         
+         </div>
+      
+      </aside> 
+
+      <main
+         class="fixed right-2 top-[68px] h-[calc(100vh_-_150px)] w-[calc(100vw_-_16px)] md:w-[calc(100vw_-_344px)] lg:w-[calc(100vw_-_408px)] 2xl:w-[calc(100vw_-_472px)] bg-grayy rounded-lg
+         space-y-7 overflow-y-auto ">
+
+         <!-- Background Color -->
+         <div class="absolute top-0 left-0 w-full h-[600px] -z-10 pointer-events-none bg-gradient-to-b from-[#212121] to-grayy rounded-lg "></div>
+
+         <!--Songs-->
+         <div class="flex flex-col  pt-8 pl-10 z-20">
+
+            <h2 class="pb-2 pl-2 text-2xl font-bold">Trending Songs</h2>
+
+            <!-- Song Container -->
+            <div class="flex overflow-x-hidden whitespace-nowrap"> 
+
+               <!-- Song #1 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+                     
+                     <!-- Image and Play Button -->
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/debby-ledet-jEYiaGwmkdk-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <!-- Play Button -->
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #2 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/hisu-lee-2qvxIr_DXGo-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #3 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0"
+                              loading="lazy">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/hong-nguyen-J4TEzb9mb3A-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #4 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/jacob-mejicanos-iA3y-m3zrzs-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #5 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/keller-chewning-fnCVrs_kSgE-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #6 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/kelli-mcclintock-dtf5VNFV1uU-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #7 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/stormseeker-rX12B5uX7QM-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #8 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/zalfa-imani-krmhTfAWwlk-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Song #9 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/songs/sang-tran-YKd7Q3sDvr8-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+            </div>
+
+         </div>
+           
+            
+         <!--Artists-->
+         <div class="flex flex-col  pt-8 pl-10 z-20">
+
+            <h2 class="pb-2 pl-2 text-2xl font-bold">Popular artists</h2>
+
+            <!-- Artist Container -->
+            <div class="flex overflow-x-hidden whitespace-nowrap"> 
+
+            <!-- artist #1 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <!-- Image and Play Button -->
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/aiony-haust-3TLl_97HNJo-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <!-- Play Button -->
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #2 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/good-faces-xmSWVeGEnJw-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #3 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/gabriel-silverio-K_b41GaWC5Y-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #4 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #5 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/icons8-team-FcLyt7lW5wg-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #6 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/jessica-felicio-_cvwXhGqG-o-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #7 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #8 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/rafaella-mendes-diniz-et_78QkMMQs-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            <!-- artist #9 -->
+            <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+               <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                           transition-colors duration-200 flex-shrink-0">
+
+                  <div class="relative flex-shrink-0">
+
+                  <img src="img/artists/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="" class="relative
+                              size-40 object-cover object-center flex-shrink-0 rounded-full shadow-lg"
+                              loading="lazy">
+
+                  <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                              group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                     <i class="fa-solid fa-play text-dark text-lg"></i>
+                  </div>
+
+                  </div>
+
+                  <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                  <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist</h4>
+
+               </div>  
+            </div>
+
+            </div>
+
+         </div>
+
+
+         <!--Albums-->
+         <div class="flex flex-col pt-8 pl-10 z-20 pb-8">
+
+            <h2 class="pb-2 pl-2 text-2xl font-bold">Popular albums and singles</h2>
+
+            <!-- Album Container -->
+            <div class="flex overflow-x-hidden whitespace-nowrap"> 
+
+               <!-- Album #1 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+                     
+                     <!-- Image and Play Button -->
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/1millikarat-KQ_DwS1225o-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <!-- Play Button -->
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #2 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/alexandra-lowenthal--N-eeYHh68M-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #3 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/carter-baran-mskaPCZC7z4-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #4 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/frank-rolando-romero-1VkoyXi5uZ8-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Album Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #5 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/giorgio-trovato-gv2E6bX7qLo-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #6 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/sam-moghadam-O5TQVuCuLVE-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Song Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Album Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #7 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/shot-by-joe-LJrebKiQ-qg-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+               <!-- Album #8 -->
+               <div class="group w-fit h-fit cursor-pointer flex-shrink-0">
+                  <div class="flex flex-col gap-1 group-hover:bg-[#303030] p-2.5 rounded-md
+                              transition-colors duration-200 flex-shrink-0">
+
+                     <div class="relative flex-shrink-0">
+
+                     <img src="img/albums/jason-rosewell-ASKeuOZqhYU-unsplash.jpg" alt="" class="relative
+                                 size-40 object-cover object-center flex-shrink-0 rounded-md shadow-lg"
+                                 loading="lazy">
+
+                     <div class="translate-y-4 opacity-0 transition-transform transition-opacity duration-400
+                                 group-hover:translate-y-0 group-hover:opacity-100 z-10 absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green flex items-center justify-center">
+                        <i class="fa-solid fa-play text-dark text-lg"></i>
+                     </div>
+
+                     </div>
+
+                     <h3 class="transition-colors duration-200 hover:underline">Album Name</h3>
+                     <h4 class="text-sm text-neutral-400 transition-colors duration-200 hover:underline">Artist Name</h4>
+
+                  </div>  
+               </div>
+
+
+
+            </div>
+
+         </div>         
+
+         <footer>
+
+            <!-- Upperside Container -->
+            <div class="flex flex-wrap items-start gap-6 justify-between text-neutral-400 w-full px-12 py-14 border-t border-neutral-800">
+
+               <!-- Company -->
+               <div class="flex flex-col gap-1.5 w-40">
+                  <h6 class="text-white font-bold">Company</h6>
+                  <a href="#">About</a>
+                  <a href="#">Jobs</a>
+                  <a href="#">For the record</a>
+               </div>
+
+               <!-- Communities -->
+               <div class="flex flex-col gap-1.5 w-40">
+                  <h6 class="text-white font-bold">Communities</h6>
+                  <a href="#">For Artists</a>
+                  <a href="#">Developers</a>
+                  <a href="#">Advertising</a>
+                  <a href="#">Investors</a>
+                  <a href="#">Vendors</a>
+               </div>
+
+               <!-- Useful Links -->
+               <div class="flex flex-col gap-1.5 w-40">
+                  <h6 class="text-white font-bold">Useful Links</h6>
+                  <a href="#">Support</a>
+                  <a href="#">Free Mobile App</a>
+                  <a href="#">Popular by Country</a>
+               </div>
+
+               <!-- Spotify Plans (Eksik olan w-40 ekleniyor) -->
+               <div class="flex flex-col gap-1.5 w-40">
+                  <h6 class="text-white font-bold">Spotify Plans</h6>
+                  <a href="#">Premium Individual</a>
+                  <a href="#">Premium Duo</a>
+                  <a href="#">Premium Family</a>
+                  <a href="#">Premium Student</a>
+                  <a href="#">Spotify Free</a>
+               </div>
+
+               <!-- Icons -->
+               <div class="flex gap-3.5 text-xl w-40">
+                  <a href="#" class="flex items-center justify-center w-10 h-10 bg-midgray rounded-full hover:bg-lightgray transition-colors duration-200">
+                     <i class="fa-brands fa-instagram text-white"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center w-10 h-10 bg-midgray rounded-full hover:bg-lightgray transition-colors duration-200">
+                     <i class="fa-brands fa-x-twitter text-white"></i>
+                  </a>
+                  <a href="#" class="flex items-center justify-center w-10 h-10 bg-midgray rounded-full hover:bg-lightgray transition-colors duration-200">
+                     <i class="fa-brands fa-facebook text-white"></i>
+                  </a>
+               </div>
+
+            </div>
+
+
+            <!--Bottomside Container-->
+            <div class="px-12 py-14 border-t border-neutral-800">
+
+               <span class="text-neutral-400">&copy; 2025 Spotify AB</span>
+
+            </div>
+
+
+
+
+         </footer>
+
+
+            
+      
+      </main>
+
+      <section
+         class="fixed bottom-2 left-2 h-[64px] w-[calc(100vw-16px)] bg-linear-to-r from-fuchsia-700 to-blue-400 ">
+         <div class="flex items-center justify-between h-full w-full px-4">
+            <div class="flex flex-col justify-center h-full w-full text-white">
+               <span class="text-sm font-bold">Preview of Spotify</span>
+               <span class="hidden min-[860px]:inline-block"
+                  >Sign up to get unlimited songs and podcasts with occasional
+                  ads. No credit card needed.</span
+               >
+            </div>
+
+            <button
+               class="text-black font-bold bg-white rounded-4xl w-40 h-12 transition-all duration-200 hover:scale-105 hover:bg-neutral-300 cursor-pointer">
+               Sign Up Free
+            </button>
+         </div>
+      </section>
+   
+   </body>
+
+   </html>
